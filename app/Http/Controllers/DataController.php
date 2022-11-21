@@ -23,7 +23,7 @@ class DataController extends Controller
     {
 
         // $data = Tim::with('pemain:id_tim,nama_pemain')->get();
-        $data = Data::with(['jadwal','pencetak_gol_terbanyak'])->get();
+        $data = Data::with(['jadwal.tim_home','jadwal.tim_away','pencetak_gol_terbanyak'])->get();
         return response()->json(
             [
                 'success' => true,
